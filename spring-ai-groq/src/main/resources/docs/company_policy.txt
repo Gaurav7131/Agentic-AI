@@ -1,0 +1,4 @@
+Project Titan Security Policy:
+1. All developers must submit security audits before deploying to Kubernetes cluster Titan-Prod.
+2. The encryption key for production databases is rotated every 45 days by the SecOps team.
+3. Access to private S3 buckets requires signing through internal hardware security module HSM-99.
