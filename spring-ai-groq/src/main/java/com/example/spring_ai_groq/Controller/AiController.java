@@ -1,4 +1,4 @@
-package com.example.spring_ai_groq.Controller;
+package com.example.spring_ai_groq.controller;
 
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.http.MediaType;
