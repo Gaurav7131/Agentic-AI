@@ -66,7 +66,7 @@ public class ObservedAiService {
                 long completiontokens = 0;
                 long totaltokens = 0;
 
-                if (chatResponse.getMetadata() != null && chatResponse.getMetadata().getUsage() != null) {
+                if (chatResponse.getMetadata() != null && chatResponse.getMetadata() != null) {
                         prompttokens = chatResponse.getMetadata().getUsage().getPromptTokens();
                         completiontokens = chatResponse.getMetadata().getUsage().getCompletionTokens();
                         totaltokens = chatResponse.getMetadata().getUsage().getTotalTokens();
