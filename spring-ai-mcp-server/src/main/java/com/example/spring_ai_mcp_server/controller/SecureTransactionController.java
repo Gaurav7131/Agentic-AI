@@ -14,28 +14,42 @@ import com.example.spring_ai_mcp_server.service.SecureTransferServices;
 @RestController
 @RequestMapping("/api/hitl")
 public class SecureTransactionController {
+
     private final ChatClient chatClient;
     private final SecureTransferServices services;
 
     public SecureTransactionController(ChatClient.Builder chatBuilder, SecureTransferServices services) {
         this.services = services;
-        this.chatClient = chatBuilder.defaultSystem("""
-                You are a secure banking compliance agent.
-                Use your available tools to execute transfers. If a tool reports that human approval is required,
-                clearly relay the reference ticket to the user.
-                """).defaultTools(services).build();
+        this.chatClient = chatBuilder
+                .defaultSystem("""
+                        You are a secure banking compliance agent.
+                        Use the available transfer tool to initiate transfers.
+                        If a transaction requires supervisor approval, clearly provide the Ticket ID to the user.
+                        Do not fabricate successful completion if human approval is pending.
+                        """)
+                .defaultTools(services)
+                .build();
     }
 
     @GetMapping("/chat")
     public Map<String, String> agentChat(
-            @RequestParam(required = false, defaultValue = "Hello, I want to transfer funds.") String message) {
-        String response = chatClient.prompt().user(message).call().content();
+            @RequestParam(defaultValue = "Please transfer $600 from Acc-102 to Acc-101") String message) {
+        String response = chatClient.prompt()
+                .user(message)
+                .call()
+                .content();
+
         return Map.of("prompt", message, "response", response != null ? response : "No response");
     }
 
     @PostMapping("/approve")
-    public Map<String, String> approveTransaction(@RequestParam(defaultValue = "Got ticketId") String ticketId) {
+    public Map<String, String> approveTransaction(@RequestParam String ticketId) {
         String result = services.approveAndExecute(ticketId);
         return Map.of("ticketId", ticketId, "status", result);
+    }
+
+    @GetMapping("/balances")
+    public Map<String, Object> checkBalances() {
+        return Map.of("accounts", services.getBalances());
     }
 }
