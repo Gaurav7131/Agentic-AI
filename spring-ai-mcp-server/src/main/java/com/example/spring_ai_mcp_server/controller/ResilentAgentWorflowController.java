@@ -20,6 +20,7 @@ public class ResilentAgentWorflowController {
     }
 
     // Execute
+    @PostMapping("/execute")
     public Map<String, Object> execute(@RequestParam String prompt) {
         return service.processUserIntent(prompt, 1000.0);
     }
@@ -28,7 +29,7 @@ public class ResilentAgentWorflowController {
     @PostMapping("/resume")
     public Map<String, Object> resume(@RequestParam String checkpointId,
             @RequestParam boolean approved) {
-        return service.resumeExecution(checkpointId, true);
+        return service.resumeExecution(checkpointId, approved);
     }
 
 }

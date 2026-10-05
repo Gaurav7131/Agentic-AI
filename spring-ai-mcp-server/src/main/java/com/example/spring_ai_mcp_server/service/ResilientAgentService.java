@@ -30,7 +30,6 @@ public class ResilientAgentService {
     }
 
     // Processed Execution
-
     public Map<String, Object> processUserIntent(String userMsg, double riskThreshold) {
         // regex or preliminary LLM classifier to intercept destructive amounts
         if (userMsg.contains("transfer") && userMsg.matches(".*\\b([2-9]\\d{3}|\\d{5,})\\b.*")) {
