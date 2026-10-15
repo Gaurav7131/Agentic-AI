@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="1000" height="400" role="img" aria-label="Spring AI auto-configuration pipeline" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<title>Spring AI auto-configuration pipeline</title>
+<defs><filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="3.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<linearGradient id="bar" x1="0" x2="1"><stop offset="0" stop-color="#58a6ff"/><stop offset="0.5" stop-color="#bc8cff"/><stop offset="1" stop-color="#f778ba"/></linearGradient>
+<marker id="a58a6ff" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#58a6ff"/></marker>
+</defs>
+<rect width="1000" height="400" rx="16" fill="#0d1117"/>
+<rect x="0" y="0" width="1000" height="4" rx="2" fill="url(#bar)"><animate attributeName="opacity" values="0.5;1;0.5" dur="4s" repeatCount="indefinite"/></rect>
+<text x="30" y="42" font-size="20" font-weight="700" fill="#e6edf3">Auto-Configuration Pipeline</text>
+<text x="30" y="66" font-size="12.5" fill="#8b949e">How a few properties become an injectable ChatClient</text>
+<text x="130" y="385" font-size="12" fill="#8b949e" font-weight="400" text-anchor="start">Swap Groq ⇄ Ollama by changing properties only — business code never changes.</text>
+<line x1="233.0" y1="150.0" x2="277.0" y2="150.0" stroke="#58a6ff" stroke-width="2" stroke-dasharray="8 8" marker-end="url(#a58a6ff)" opacity="0.85"><animate attributeName="stroke-dashoffset" values="16;0" dur="0.8s" repeatCount="indefinite"/></line>
+<line x1="483.0" y1="150.0" x2="527.0" y2="150.0" stroke="#58a6ff" stroke-width="2" stroke-dasharray="8 8" marker-end="url(#a58a6ff)" opacity="0.85"><animate attributeName="stroke-dashoffset" values="16;0" dur="0.8s" repeatCount="indefinite"/></line>
+<line x1="733.0" y1="150.0" x2="777.0" y2="150.0" stroke="#58a6ff" stroke-width="2" stroke-dasharray="8 8" marker-end="url(#a58a6ff)" opacity="0.85"><animate attributeName="stroke-dashoffset" values="16;0" dur="0.8s" repeatCount="indefinite"/></line>
+<line x1="880.0" y1="189.0" x2="880.0" y2="271.0" stroke="#58a6ff" stroke-width="2" stroke-dasharray="8 8" marker-end="url(#a58a6ff)" opacity="0.85"><animate attributeName="stroke-dashoffset" values="16;0" dur="0.8s" repeatCount="indefinite"/></line>
+<line x1="777.0" y1="310.0" x2="733.0" y2="310.0" stroke="#58a6ff" stroke-width="2" stroke-dasharray="8 8" marker-end="url(#a58a6ff)" opacity="0.85"><animate attributeName="stroke-dashoffset" values="16;0" dur="0.8s" repeatCount="indefinite"/></line>
+<line x1="527.0" y1="310.0" x2="483.0" y2="310.0" stroke="#58a6ff" stroke-width="2" stroke-dasharray="8 8" marker-end="url(#a58a6ff)" opacity="0.85"><animate attributeName="stroke-dashoffset" values="16;0" dur="0.8s" repeatCount="indefinite"/></line>
+<circle r="6" fill="#58a6ff" filter="url(#glow)"><animateMotion dur="9.59s" repeatCount="indefinite" calcMode="linear" keyPoints="0;1;1" keyTimes="0;0.8645;1" path="M130.0,150.0 L380.0,150.0 L630.0,150.0 L880.0,150.0 L880.0,310.0 L630.0,310.0 L380.0,310.0"/></circle>
+<rect x="30.0" y="114.0" width="200" height="72" rx="12" fill="#161b22" stroke="#58a6ff" stroke-width="1.5"/>
+<text x="130" y="147" font-size="14" font-weight="700" fill="#e6edf3" text-anchor="middle">Application Startup</text>
+<text x="130" y="166" font-size="11.5" fill="#8b949e" text-anchor="middle">SpringApplication.run()</text>
+<rect x="280.0" y="114.0" width="200" height="72" rx="12" fill="#161b22" stroke="#bc8cff" stroke-width="1.5"/>
+<text x="380" y="147" font-size="14" font-weight="700" fill="#e6edf3" text-anchor="middle">Classpath Scanning</text>
+<text x="380" y="166" font-size="11.5" fill="#8b949e" text-anchor="middle">detects the OpenAI starter</text>
+<rect x="530.0" y="114.0" width="200" height="72" rx="12" fill="#161b22" stroke="#3fb950" stroke-width="1.5"/>
+<text x="630" y="147" font-size="14" font-weight="700" fill="#e6edf3" text-anchor="middle">Configuration Binding</text>
+<text x="630" y="166" font-size="11.5" fill="#8b949e" text-anchor="middle">spring.ai.openai.* → props</text>
+<rect x="780.0" y="114.0" width="200" height="72" rx="12" fill="#161b22" stroke="#f0883e" stroke-width="1.5"/>
+<text x="880" y="147" font-size="14" font-weight="700" fill="#e6edf3" text-anchor="middle">Transport Assembly</text>
+<text x="880" y="166" font-size="11.5" fill="#8b949e" text-anchor="middle">RestClient + Bearer token</text>
+<rect x="780.0" y="274.0" width="200" height="72" rx="12" fill="#161b22" stroke="#f778ba" stroke-width="1.5"/>
+<text x="880" y="307" font-size="14" font-weight="700" fill="#e6edf3" text-anchor="middle">Model Bean Creation</text>
+<text x="880" y="326" font-size="11.5" fill="#8b949e" text-anchor="middle">OpenAiChatModel</text>
+<rect x="530.0" y="274.0" width="200" height="72" rx="12" fill="#161b22" stroke="#d29922" stroke-width="1.5"/>
+<text x="630" y="307" font-size="14" font-weight="700" fill="#e6edf3" text-anchor="middle">Builder Factory</text>
+<text x="630" y="326" font-size="11.5" fill="#8b949e" text-anchor="middle">ChatClient.Builder bean</text>
+<rect x="280.0" y="274.0" width="200" height="72" rx="12" fill="#161b22" stroke="#39c5cf" stroke-width="1.5"/>
+<text x="380" y="307" font-size="14" font-weight="700" fill="#e6edf3" text-anchor="middle">Controller Injection</text>
+<text x="380" y="326" font-size="11.5" fill="#8b949e" text-anchor="middle">.build() → live ChatClient</text>
+<rect x="30.0" y="114.0" width="200" height="72" rx="12" fill="#58a6ff" fill-opacity="0.22" stroke="#58a6ff" stroke-width="3" opacity="0"><animate attributeName="opacity" dur="9.59s" repeatCount="indefinite" keyTimes="0.0000;0.0938;1.0000" values="1.000;0.000;0.000"/></rect>
+<rect x="280.0" y="114.0" width="200" height="72" rx="12" fill="#bc8cff" fill-opacity="0.22" stroke="#bc8cff" stroke-width="3" opacity="0"><animate attributeName="opacity" dur="9.59s" repeatCount="indefinite" keyTimes="0.0000;0.1376;0.1533;0.2471;1.0000" values="0.000;0.000;1.000;0.000;0.000"/></rect>
+<rect x="530.0" y="114.0" width="200" height="72" rx="12" fill="#3fb950" fill-opacity="0.22" stroke="#3fb950" stroke-width="3" opacity="0"><animate attributeName="opacity" dur="9.59s" repeatCount="indefinite" keyTimes="0.0000;0.2909;0.3066;0.4004;1.0000" values="0.000;0.000;1.000;0.000;0.000"/></rect>
+<rect x="780.0" y="114.0" width="200" height="72" rx="12" fill="#f0883e" fill-opacity="0.22" stroke="#f0883e" stroke-width="3" opacity="0"><animate attributeName="opacity" dur="9.59s" repeatCount="indefinite" keyTimes="0.0000;0.4442;0.4598;0.5536;1.0000" values="0.000;0.000;0.997;0.001;0.000"/></rect>
+<rect x="780.0" y="274.0" width="200" height="72" rx="12" fill="#f778ba" fill-opacity="0.22" stroke="#f778ba" stroke-width="3" opacity="0"><animate attributeName="opacity" dur="9.59s" repeatCount="indefinite" keyTimes="0.0000;0.5423;0.5579;0.6517;1.0000" values="0.000;0.000;0.997;0.001;0.000"/></rect>
+<rect x="530.0" y="274.0" width="200" height="72" rx="12" fill="#d29922" fill-opacity="0.22" stroke="#d29922" stroke-width="3" opacity="0"><animate attributeName="opacity" dur="9.59s" repeatCount="indefinite" keyTimes="0.0000;0.6956;0.7112;0.8050;1.0000" values="0.000;0.001;0.999;0.000;0.000"/></rect>
+<rect x="280.0" y="274.0" width="200" height="72" rx="12" fill="#39c5cf" fill-opacity="0.22" stroke="#39c5cf" stroke-width="3" opacity="0"><animate attributeName="opacity" dur="9.59s" repeatCount="indefinite" keyTimes="0.0000;0.8489;0.8645;0.9583;1.0000" values="0.000;0.002;1.000;0.000;0.000"/></rect>
+</svg>

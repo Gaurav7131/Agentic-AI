@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 440" width="1040" height="440" role="img" aria-label="HITL approval workflow with saga compensation" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<title>HITL approval workflow with saga compensation</title>
+<defs><filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="3.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<linearGradient id="bar" x1="0" x2="1"><stop offset="0" stop-color="#58a6ff"/><stop offset="0.5" stop-color="#bc8cff"/><stop offset="1" stop-color="#f778ba"/></linearGradient>
+<marker id="a3fb950" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#3fb950"/></marker>
+<marker id="af85149" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f85149"/></marker>
+</defs>
+<rect width="1040" height="440" rx="16" fill="#0d1117"/>
+<rect x="0" y="0" width="1040" height="4" rx="2" fill="url(#bar)"><animate attributeName="opacity" values="0.5;1;0.5" dur="4s" repeatCount="indefinite"/></rect>
+<text x="30" y="42" font-size="20" font-weight="700" fill="#e6edf3">Human-in-the-Loop · Checkpoint · Saga Rollback</text>
+<text x="30" y="66" font-size="12.5" fill="#8b949e">Risky actions pause, persist state, and resume only after an authorized approval</text>
+<text x="30" y="410" font-size="12" fill="#8b949e" font-weight="400" text-anchor="start">Amount ≤ $500 → auto-execute.  Amount &gt; $500 or destructive op → pause, checkpoint, wait for /approve.</text>
+<line x1="183.0" y1="150.0" x2="227.0" y2="150.0" stroke="#3fb950" stroke-width="2" stroke-dasharray="8 8" marker-end="url(#a3fb950)" opacity="0.85"><animate attributeName="stroke-dashoffset" values="16;0" dur="0.8s" repeatCount="indefinite"/></line>
+<line x1="393.0" y1="150.0" x2="437.0" y2="150.0" stroke="#3fb950" stroke-width="2" stroke-dasharray="8 8" marker-end="url(#a3fb950)" opacity="0.85"><animate attributeName="stroke-dashoffset" values="16;0" dur="0.8s" repeatCount="indefinite"/></line>
+<line x1="603.0" y1="150.0" x2="647.0" y2="150.0" stroke="#3fb950" stroke-width="2" stroke-dasharray="8 8" marker-end="url(#a3fb950)" opacity="0.85"><animate attributeName="stroke-dashoffset" values="16;0" dur="0.8s" repeatCount="indefinite"/></line>
+<line x1="813.0" y1="150.0" x2="857.0" y2="150.0" stroke="#3fb950" stroke-width="2" stroke-dasharray="8 8" marker-end="url(#a3fb950)" opacity="0.85"><animate attributeName="stroke-dashoffset" values="16;0" dur="0.8s" repeatCount="indefinite"/></line>
+<line x1="940.0" y1="189.0" x2="940.0" y2="291.0" stroke="#3fb950" stroke-width="2" stroke-dasharray="8 8" marker-end="url(#a3fb950)" opacity="0.85"><animate attributeName="stroke-dashoffset" values="16;0" dur="0.8s" repeatCount="indefinite"/></line>
+<line x1="857.2" y1="185.5" x2="602.8" y2="294.5" stroke="#f85149" stroke-width="1.8" stroke-dasharray="3 5" marker-end="url(#af85149)" opacity="0.9"/>
+<text x="760.0" y="232.0" font-size="11" fill="#f85149" text-anchor="middle" stroke="#0d1117" stroke-width="4" paint-order="stroke" font-weight="600">step N fails</text>
+<circle r="6" fill="#3fb950" filter="url(#glow)"><animateMotion dur="7.07s" repeatCount="indefinite" calcMode="linear" keyPoints="0;1;1" keyTimes="0;0.8019;1" path="M100.0,150.0 L310.0,150.0 L520.0,150.0 L730.0,150.0 L940.0,150.0 L940.0,330.0"/></circle>
+<rect x="20.0" y="114.0" width="160" height="72" rx="12" fill="#161b22" stroke="#58a6ff" stroke-width="1.5"/>
+<text x="100" y="147" font-size="14" font-weight="700" fill="#e6edf3" text-anchor="middle">Agent Request</text>
+<text x="100" y="166" font-size="11.5" fill="#8b949e" text-anchor="middle">mutating tool call</text>
+<rect x="230.0" y="114.0" width="160" height="72" rx="12" fill="#161b22" stroke="#bc8cff" stroke-width="1.5"/>
+<text x="310" y="147" font-size="14" font-weight="700" fill="#e6edf3" text-anchor="middle">ASSESS</text>
+<text x="310" y="166" font-size="11.5" fill="#8b949e" text-anchor="middle">risk-threshold check</text>
+<rect x="440.0" y="114.0" width="160" height="72" rx="12" fill="#161b22" stroke="#f0883e" stroke-width="1.5"/>
+<text x="520" y="147" font-size="14" font-weight="700" fill="#e6edf3" text-anchor="middle">APPROVAL_PENDING</text>
+<text x="520" y="166" font-size="11.5" fill="#8b949e" text-anchor="middle">checkpoint → Redis / PG</text>
+<rect x="650.0" y="114.0" width="160" height="72" rx="12" fill="#161b22" stroke="#d29922" stroke-width="1.5"/>
+<text x="730" y="147" font-size="14" font-weight="700" fill="#e6edf3" text-anchor="middle">Operator</text>
+<text x="730" y="166" font-size="11.5" fill="#8b949e" text-anchor="middle">POST /approve</text>
+<rect x="860.0" y="114.0" width="160" height="72" rx="12" fill="#161b22" stroke="#39c5cf" stroke-width="1.5"/>
+<text x="940" y="147" font-size="14" font-weight="700" fill="#e6edf3" text-anchor="middle">EXECUTE</text>
+<text x="940" y="166" font-size="11.5" fill="#8b949e" text-anchor="middle">resume from snapshot</text>
+<rect x="860.0" y="294.0" width="160" height="72" rx="12" fill="#161b22" stroke="#3fb950" stroke-width="1.5"/>
+<text x="940" y="327" font-size="14" font-weight="700" fill="#e6edf3" text-anchor="middle">DEPLOYED</text>
+<text x="940" y="346" font-size="11.5" fill="#8b949e" text-anchor="middle">mutation committed</text>
+<rect x="440.0" y="294.0" width="160" height="72" rx="12" fill="#161b22" stroke="#f85149" stroke-width="1.5"/>
+<text x="520" y="327" font-size="14" font-weight="700" fill="#e6edf3" text-anchor="middle">COMPENSATE</text>
+<text x="520" y="346" font-size="11.5" fill="#8b949e" text-anchor="middle">saga: inverse steps, reversed</text>
+<rect x="20.0" y="114.0" width="160" height="72" rx="12" fill="#58a6ff" fill-opacity="0.22" stroke="#58a6ff" stroke-width="3" opacity="0"><animate attributeName="opacity" dur="7.07s" repeatCount="indefinite" keyTimes="0.0000;0.1274;1.0000" values="1.000;0.000;0.000"/></rect>
+<rect x="230.0" y="114.0" width="160" height="72" rx="12" fill="#bc8cff" fill-opacity="0.22" stroke="#bc8cff" stroke-width="3" opacity="0"><animate attributeName="opacity" dur="7.07s" repeatCount="indefinite" keyTimes="0.0000;0.1439;0.1651;0.2925;1.0000" values="0.000;0.002;1.000;0.000;0.000"/></rect>
+<rect x="440.0" y="114.0" width="160" height="72" rx="12" fill="#f0883e" fill-opacity="0.22" stroke="#f0883e" stroke-width="3" opacity="0"><animate attributeName="opacity" dur="7.07s" repeatCount="indefinite" keyTimes="0.0000;0.3090;0.3302;0.4575;1.0000" values="0.000;0.002;1.000;0.000;0.000"/></rect>
+<rect x="650.0" y="114.0" width="160" height="72" rx="12" fill="#d29922" fill-opacity="0.22" stroke="#d29922" stroke-width="3" opacity="0"><animate attributeName="opacity" dur="7.07s" repeatCount="indefinite" keyTimes="0.0000;0.4741;0.4953;0.6226;1.0000" values="0.000;0.002;1.000;0.000;0.000"/></rect>
+<rect x="860.0" y="114.0" width="160" height="72" rx="12" fill="#39c5cf" fill-opacity="0.22" stroke="#39c5cf" stroke-width="3" opacity="0"><animate attributeName="opacity" dur="7.07s" repeatCount="indefinite" keyTimes="0.0000;0.6392;0.6604;0.7877;1.0000" values="0.000;0.002;1.000;0.000;0.000"/></rect>
+<rect x="860.0" y="294.0" width="160" height="72" rx="12" fill="#3fb950" fill-opacity="0.22" stroke="#3fb950" stroke-width="3" opacity="0"><animate attributeName="opacity" dur="7.07s" repeatCount="indefinite" keyTimes="0.0000;0.7807;0.8019;0.9292;1.0000" values="0.000;0.002;1.000;0.000;0.000"/></rect>
+</svg>

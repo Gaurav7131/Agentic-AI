@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" width="900" height="430" role="img" aria-label="ReAct loop animation" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<title>ReAct loop animation</title>
+<defs><filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="3.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<linearGradient id="bar" x1="0" x2="1"><stop offset="0" stop-color="#58a6ff"/><stop offset="0.5" stop-color="#bc8cff"/><stop offset="1" stop-color="#f778ba"/></linearGradient>
+<marker id="a58a6ff" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#58a6ff"/></marker>
+</defs>
+<rect width="900" height="430" rx="16" fill="#0d1117"/>
+<rect x="0" y="0" width="900" height="4" rx="2" fill="url(#bar)"><animate attributeName="opacity" values="0.5;1;0.5" dur="4s" repeatCount="indefinite"/></rect>
+<text x="30" y="42" font-size="20" font-weight="700" fill="#e6edf3">ReAct Loop · Reason → Act → Observe</text>
+<text x="30" y="66" font-size="12.5" fill="#8b949e">@Tool beans are advertised as JSON schemas; Spring AI executes them and feeds results back</text>
+<line x1="208.0" y1="150.0" x2="302.0" y2="150.0" stroke="#58a6ff" stroke-width="2" stroke-dasharray="8 8" marker-end="url(#a58a6ff)" opacity="0.85"><animate attributeName="stroke-dashoffset" values="16;0" dur="0.8s" repeatCount="indefinite"/></line>
+<line x1="498.0" y1="150.0" x2="602.0" y2="150.0" stroke="#58a6ff" stroke-width="2" stroke-dasharray="8 8" marker-end="url(#a58a6ff)" opacity="0.85"><animate attributeName="stroke-dashoffset" values="16;0" dur="0.8s" repeatCount="indefinite"/></line>
+<line x1="700.0" y1="189.0" x2="700.0" y2="301.0" stroke="#58a6ff" stroke-width="2" stroke-dasharray="8 8" marker-end="url(#a58a6ff)" opacity="0.85"><animate attributeName="stroke-dashoffset" values="16;0" dur="0.8s" repeatCount="indefinite"/></line>
+<line x1="602.0" y1="340.0" x2="498.0" y2="340.0" stroke="#58a6ff" stroke-width="2" stroke-dasharray="8 8" marker-end="url(#a58a6ff)" opacity="0.85"><animate attributeName="stroke-dashoffset" values="16;0" dur="0.8s" repeatCount="indefinite"/></line>
+<line x1="400.0" y1="301.0" x2="400.0" y2="189.0" stroke="#58a6ff" stroke-width="2" stroke-dasharray="8 8" marker-end="url(#a58a6ff)" opacity="0.85"><animate attributeName="stroke-dashoffset" values="16;0" dur="0.8s" repeatCount="indefinite"/></line>
+<text x="455.0" y="245.0" font-size="11" fill="#58a6ff" text-anchor="middle" stroke="#0d1117" stroke-width="4" paint-order="stroke" font-weight="600">loop until done</text>
+<line x1="342.5" y1="187.6" x2="167.5" y2="302.4" stroke="#58a6ff" stroke-width="2" stroke-dasharray="8 8" marker-end="url(#a58a6ff)" opacity="0.85"><animate attributeName="stroke-dashoffset" values="16;0" dur="0.8s" repeatCount="indefinite"/></line>
+<text x="245.0" y="239.0" font-size="11" fill="#58a6ff" text-anchor="middle" stroke="#0d1117" stroke-width="4" paint-order="stroke" font-weight="600">no more tool calls</text>
+<circle r="6" fill="#58a6ff" filter="url(#glow)"><animateMotion dur="9.71s" repeatCount="indefinite" calcMode="linear" keyPoints="0;1;1" keyTimes="0;0.8764;1" path="M110.0,150.0 L400.0,150.0 L700.0,150.0 L700.0,340.0 L400.0,340.0 L400.0,150.0 L110.0,340.0"/></circle>
+<rect x="15.0" y="114.0" width="190" height="72" rx="12" fill="#161b22" stroke="#58a6ff" stroke-width="1.5"/>
+<text x="110" y="147" font-size="14" font-weight="700" fill="#e6edf3" text-anchor="middle">User Input</text>
+<text x="110" y="166" font-size="11.5" fill="#8b949e" text-anchor="middle">natural-language request</text>
+<rect x="305.0" y="114.0" width="190" height="72" rx="12" fill="#161b22" stroke="#bc8cff" stroke-width="1.5"/>
+<text x="400" y="147" font-size="14" font-weight="700" fill="#e6edf3" text-anchor="middle">LLM: Reason</text>
+<text x="400" y="166" font-size="11.5" fill="#8b949e" text-anchor="middle">pick intent &amp; tools</text>
+<rect x="605.0" y="114.0" width="190" height="72" rx="12" fill="#161b22" stroke="#f0883e" stroke-width="1.5"/>
+<text x="700" y="147" font-size="14" font-weight="700" fill="#e6edf3" text-anchor="middle">LLM: Act</text>
+<text x="700" y="166" font-size="11.5" fill="#8b949e" text-anchor="middle">emits function-call JSON</text>
+<rect x="605.0" y="304.0" width="190" height="72" rx="12" fill="#161b22" stroke="#f778ba" stroke-width="1.5"/>
+<text x="700" y="337" font-size="14" font-weight="700" fill="#e6edf3" text-anchor="middle">Tool Invocation</text>
+<text x="700" y="356" font-size="11.5" fill="#8b949e" text-anchor="middle">@Tool method via reflection</text>
+<rect x="305.0" y="304.0" width="190" height="72" rx="12" fill="#161b22" stroke="#d29922" stroke-width="1.5"/>
+<text x="400" y="337" font-size="14" font-weight="700" fill="#e6edf3" text-anchor="middle">Observation</text>
+<text x="400" y="356" font-size="11.5" fill="#8b949e" text-anchor="middle">result returned to the LLM</text>
+<rect x="15.0" y="304.0" width="190" height="72" rx="12" fill="#161b22" stroke="#3fb950" stroke-width="1.5"/>
+<text x="110" y="337" font-size="14" font-weight="700" fill="#e6edf3" text-anchor="middle">Final Answer</text>
+<text x="110" y="356" font-size="11.5" fill="#8b949e" text-anchor="middle">synthesized response</text>
+<rect x="15.0" y="114.0" width="190" height="72" rx="12" fill="#58a6ff" fill-opacity="0.22" stroke="#58a6ff" stroke-width="3" opacity="0"><animate attributeName="opacity" dur="9.71s" repeatCount="indefinite" keyTimes="0.0000;0.0927;1.0000" values="1.000;0.000;0.000"/></rect>
+<rect x="305.0" y="114.0" width="190" height="72" rx="12" fill="#bc8cff" fill-opacity="0.22" stroke="#bc8cff" stroke-width="3" opacity="0"><animate attributeName="opacity" dur="9.71s" repeatCount="indefinite" keyTimes="0.0000;0.1418;0.1572;0.2499;0.6730;0.6885;0.7812;1.0000" values="0.000;0.003;1.000;0.000;0.000;1.000;0.000;0.000"/></rect>
+<rect x="605.0" y="114.0" width="190" height="72" rx="12" fill="#f0883e" fill-opacity="0.22" stroke="#f0883e" stroke-width="3" opacity="0"><animate attributeName="opacity" dur="9.71s" repeatCount="indefinite" keyTimes="0.0000;0.3044;0.3198;0.4125;1.0000" values="0.000;0.001;0.998;0.000;0.000"/></rect>
+<rect x="605.0" y="304.0" width="190" height="72" rx="12" fill="#f778ba" fill-opacity="0.22" stroke="#f778ba" stroke-width="3" opacity="0"><animate attributeName="opacity" dur="9.71s" repeatCount="indefinite" keyTimes="0.0000;0.4074;0.4228;0.5155;1.0000" values="0.000;0.001;0.998;0.000;0.000"/></rect>
+<rect x="305.0" y="304.0" width="190" height="72" rx="12" fill="#d29922" fill-opacity="0.22" stroke="#d29922" stroke-width="3" opacity="0"><animate attributeName="opacity" dur="9.71s" repeatCount="indefinite" keyTimes="0.0000;0.5700;0.5855;0.6782;1.0000" values="0.000;0.000;1.000;0.000;0.000"/></rect>
+<rect x="15.0" y="304.0" width="190" height="72" rx="12" fill="#3fb950" fill-opacity="0.22" stroke="#3fb950" stroke-width="3" opacity="0"><animate attributeName="opacity" dur="9.71s" repeatCount="indefinite" keyTimes="0.0000;0.8610;0.8764;0.9691;1.0000" values="0.000;0.003;1.000;0.000;0.000"/></rect>
+</svg>

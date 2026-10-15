@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 430" width="1040" height="430" role="img" aria-label="RAG ingestion and query pipeline" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<title>RAG ingestion and query pipeline</title>
+<defs><filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="3.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<linearGradient id="bar" x1="0" x2="1"><stop offset="0" stop-color="#58a6ff"/><stop offset="0.5" stop-color="#bc8cff"/><stop offset="1" stop-color="#f778ba"/></linearGradient>
+<marker id="a3fb950" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#3fb950"/></marker>
+</defs>
+<rect width="1040" height="430" rx="16" fill="#0d1117"/>
+<rect x="0" y="0" width="1040" height="4" rx="2" fill="url(#bar)"><animate attributeName="opacity" values="0.5;1;0.5" dur="4s" repeatCount="indefinite"/></rect>
+<text x="30" y="42" font-size="20" font-weight="700" fill="#e6edf3">Enterprise RAG · The “Open-Book Exam”</text>
+<text x="30" y="66" font-size="12.5" fill="#8b949e">Offline ingestion on top, online query lane below</text>
+<text x="30" y="100" font-size="11" fill="#58a6ff" font-weight="700" text-anchor="start">INGESTION (offline)</text>
+<text x="30" y="282" font-size="11" fill="#39c5cf" font-weight="700" text-anchor="start">QUERY (online)</text>
+<text x="940" y="392" font-size="11" fill="#8b949e" font-weight="400" text-anchor="middle">▲ user question is embedded &amp; matched here</text>
+<line x1="183.0" y1="150.0" x2="227.0" y2="150.0" stroke="#3fb950" stroke-width="2" stroke-dasharray="8 8" marker-end="url(#a3fb950)" opacity="0.85"><animate attributeName="stroke-dashoffset" values="16;0" dur="0.8s" repeatCount="indefinite"/></line>
+<line x1="393.0" y1="150.0" x2="437.0" y2="150.0" stroke="#3fb950" stroke-width="2" stroke-dasharray="8 8" marker-end="url(#a3fb950)" opacity="0.85"><animate attributeName="stroke-dashoffset" values="16;0" dur="0.8s" repeatCount="indefinite"/></line>
+<line x1="603.0" y1="150.0" x2="647.0" y2="150.0" stroke="#3fb950" stroke-width="2" stroke-dasharray="8 8" marker-end="url(#a3fb950)" opacity="0.85"><animate attributeName="stroke-dashoffset" values="16;0" dur="0.8s" repeatCount="indefinite"/></line>
+<line x1="813.0" y1="150.0" x2="857.0" y2="150.0" stroke="#3fb950" stroke-width="2" stroke-dasharray="8 8" marker-end="url(#a3fb950)" opacity="0.85"><animate attributeName="stroke-dashoffset" values="16;0" dur="0.8s" repeatCount="indefinite"/></line>
+<line x1="940.0" y1="189.0" x2="940.0" y2="291.0" stroke="#3fb950" stroke-width="2" stroke-dasharray="8 8" marker-end="url(#a3fb950)" opacity="0.85"><animate attributeName="stroke-dashoffset" values="16;0" dur="0.8s" repeatCount="indefinite"/></line>
+<line x1="857.0" y1="330.0" x2="813.0" y2="330.0" stroke="#3fb950" stroke-width="2" stroke-dasharray="8 8" marker-end="url(#a3fb950)" opacity="0.85"><animate attributeName="stroke-dashoffset" values="16;0" dur="0.8s" repeatCount="indefinite"/></line>
+<line x1="647.0" y1="330.0" x2="603.0" y2="330.0" stroke="#3fb950" stroke-width="2" stroke-dasharray="8 8" marker-end="url(#a3fb950)" opacity="0.85"><animate attributeName="stroke-dashoffset" values="16;0" dur="0.8s" repeatCount="indefinite"/></line>
+<line x1="437.0" y1="330.0" x2="393.0" y2="330.0" stroke="#3fb950" stroke-width="2" stroke-dasharray="8 8" marker-end="url(#a3fb950)" opacity="0.85"><animate attributeName="stroke-dashoffset" values="16;0" dur="0.8s" repeatCount="indefinite"/></line>
+<line x1="227.0" y1="330.0" x2="183.0" y2="330.0" stroke="#3fb950" stroke-width="2" stroke-dasharray="8 8" marker-end="url(#a3fb950)" opacity="0.85"><animate attributeName="stroke-dashoffset" values="16;0" dur="0.8s" repeatCount="indefinite"/></line>
+<circle r="6" fill="#3fb950" filter="url(#glow)"><animateMotion dur="10.99s" repeatCount="indefinite" calcMode="linear" keyPoints="0;1;1" keyTimes="0;0.8908;1" path="M100.0,150.0 L310.0,150.0 L520.0,150.0 L730.0,150.0 L940.0,150.0 L940.0,330.0 L730.0,330.0 L520.0,330.0 L310.0,330.0 L100.0,330.0"/></circle>
+<rect x="20.0" y="114.0" width="160" height="72" rx="12" fill="#161b22" stroke="#58a6ff" stroke-width="1.5"/>
+<text x="100" y="147" font-size="14" font-weight="700" fill="#e6edf3" text-anchor="middle">Raw Documents</text>
+<text x="100" y="166" font-size="11.5" fill="#8b949e" text-anchor="middle">PDF · DOCX · TXT</text>
+<rect x="230.0" y="114.0" width="160" height="72" rx="12" fill="#161b22" stroke="#bc8cff" stroke-width="1.5"/>
+<text x="310" y="147" font-size="14" font-weight="700" fill="#e6edf3" text-anchor="middle">Tika Reader</text>
+<text x="310" y="166" font-size="11.5" fill="#8b949e" text-anchor="middle">TikaDocumentReader</text>
+<rect x="440.0" y="114.0" width="160" height="72" rx="12" fill="#161b22" stroke="#3fb950" stroke-width="1.5"/>
+<text x="520" y="147" font-size="14" font-weight="700" fill="#e6edf3" text-anchor="middle">Token Splitter</text>
+<text x="520" y="166" font-size="11.5" fill="#8b949e" text-anchor="middle">200–800 tokens + overlap</text>
+<rect x="650.0" y="114.0" width="160" height="72" rx="12" fill="#161b22" stroke="#f0883e" stroke-width="1.5"/>
+<text x="730" y="147" font-size="14" font-weight="700" fill="#e6edf3" text-anchor="middle">Embedding Model</text>
+<text x="730" y="166" font-size="11.5" fill="#8b949e" text-anchor="middle">text → vectors</text>
+<rect x="860.0" y="114.0" width="160" height="72" rx="12" fill="#161b22" stroke="#f778ba" stroke-width="1.5"/>
+<text x="940" y="147" font-size="14" font-weight="700" fill="#e6edf3" text-anchor="middle">Vector Store</text>
+<text x="940" y="166" font-size="11.5" fill="#8b949e" text-anchor="middle">SimpleVectorStore · cosine</text>
+<rect x="860.0" y="294.0" width="160" height="72" rx="12" fill="#161b22" stroke="#39c5cf" stroke-width="1.5"/>
+<text x="940" y="327" font-size="14" font-weight="700" fill="#e6edf3" text-anchor="middle">Similarity Search</text>
+<text x="940" y="346" font-size="11.5" fill="#8b949e" text-anchor="middle">query vector vs. chunks</text>
+<rect x="650.0" y="294.0" width="160" height="72" rx="12" fill="#161b22" stroke="#d29922" stroke-width="1.5"/>
+<text x="730" y="327" font-size="14" font-weight="700" fill="#e6edf3" text-anchor="middle">QA Advisor</text>
+<text x="730" y="346" font-size="11.5" fill="#8b949e" text-anchor="middle">binds context + rules</text>
+<rect x="440.0" y="294.0" width="160" height="72" rx="12" fill="#161b22" stroke="#bc8cff" stroke-width="1.5"/>
+<text x="520" y="327" font-size="14" font-weight="700" fill="#e6edf3" text-anchor="middle">Augmented Prompt</text>
+<text x="520" y="346" font-size="11.5" fill="#8b949e" text-anchor="middle">question + top-k chunks</text>
+<rect x="230.0" y="294.0" width="160" height="72" rx="12" fill="#161b22" stroke="#f0883e" stroke-width="1.5"/>
+<text x="310" y="327" font-size="14" font-weight="700" fill="#e6edf3" text-anchor="middle">Generation LLM</text>
+<text x="310" y="346" font-size="11.5" fill="#8b949e" text-anchor="middle">grounded completion</text>
+<rect x="20.0" y="294.0" width="160" height="72" rx="12" fill="#161b22" stroke="#3fb950" stroke-width="1.5"/>
+<text x="100" y="327" font-size="14" font-weight="700" fill="#e6edf3" text-anchor="middle">Grounded Answer</text>
+<text x="100" y="346" font-size="11.5" fill="#8b949e" text-anchor="middle">or “not in context”</text>
+<rect x="20.0" y="114.0" width="160" height="72" rx="12" fill="#58a6ff" fill-opacity="0.22" stroke="#58a6ff" stroke-width="3" opacity="0"><animate attributeName="opacity" dur="10.99s" repeatCount="indefinite" keyTimes="0.0000;0.0819;1.0000" values="1.000;0.000;0.000"/></rect>
+<rect x="230.0" y="114.0" width="160" height="72" rx="12" fill="#bc8cff" fill-opacity="0.22" stroke="#bc8cff" stroke-width="3" opacity="0"><animate attributeName="opacity" dur="10.99s" repeatCount="indefinite" keyTimes="0.0000;0.0869;0.1006;0.1825;1.0000" values="0.000;0.000;1.000;0.000;0.000"/></rect>
+<rect x="440.0" y="114.0" width="160" height="72" rx="12" fill="#3fb950" fill-opacity="0.22" stroke="#3fb950" stroke-width="3" opacity="0"><animate attributeName="opacity" dur="10.99s" repeatCount="indefinite" keyTimes="0.0000;0.1875;0.2011;0.2830;1.0000" values="0.000;0.000;0.996;0.001;0.000"/></rect>
+<rect x="650.0" y="114.0" width="160" height="72" rx="12" fill="#f0883e" fill-opacity="0.22" stroke="#f0883e" stroke-width="3" opacity="0"><animate attributeName="opacity" dur="10.99s" repeatCount="indefinite" keyTimes="0.0000;0.2881;0.3017;0.3836;1.0000" values="0.000;0.002;0.998;0.000;0.000"/></rect>
+<rect x="860.0" y="114.0" width="160" height="72" rx="12" fill="#f778ba" fill-opacity="0.22" stroke="#f778ba" stroke-width="3" opacity="0"><animate attributeName="opacity" dur="10.99s" repeatCount="indefinite" keyTimes="0.0000;0.3886;0.4023;0.4842;1.0000" values="0.000;0.000;1.000;0.000;0.000"/></rect>
+<rect x="860.0" y="294.0" width="160" height="72" rx="12" fill="#39c5cf" fill-opacity="0.22" stroke="#39c5cf" stroke-width="3" opacity="0"><animate attributeName="opacity" dur="10.99s" repeatCount="indefinite" keyTimes="0.0000;0.4749;0.4885;0.5704;1.0000" values="0.000;0.003;1.000;0.000;0.000"/></rect>
+<rect x="650.0" y="294.0" width="160" height="72" rx="12" fill="#d29922" fill-opacity="0.22" stroke="#d29922" stroke-width="3" opacity="0"><animate attributeName="opacity" dur="10.99s" repeatCount="indefinite" keyTimes="0.0000;0.5754;0.5891;0.6710;1.0000" values="0.000;0.000;1.000;0.000;0.000"/></rect>
+<rect x="440.0" y="294.0" width="160" height="72" rx="12" fill="#bc8cff" fill-opacity="0.22" stroke="#bc8cff" stroke-width="3" opacity="0"><animate attributeName="opacity" dur="10.99s" repeatCount="indefinite" keyTimes="0.0000;0.6760;0.6897;0.7716;1.0000" values="0.000;0.000;0.999;0.000;0.000"/></rect>
+<rect x="230.0" y="294.0" width="160" height="72" rx="12" fill="#f0883e" fill-opacity="0.22" stroke="#f0883e" stroke-width="3" opacity="0"><animate attributeName="opacity" dur="10.99s" repeatCount="indefinite" keyTimes="0.0000;0.7766;0.7902;0.8721;1.0000" values="0.000;0.001;0.998;0.000;0.000"/></rect>
+<rect x="20.0" y="294.0" width="160" height="72" rx="12" fill="#3fb950" fill-opacity="0.22" stroke="#3fb950" stroke-width="3" opacity="0"><animate attributeName="opacity" dur="10.99s" repeatCount="indefinite" keyTimes="0.0000;0.8772;0.8908;0.9727;1.0000" values="0.000;0.003;1.000;0.000;0.000"/></rect>
+</svg>

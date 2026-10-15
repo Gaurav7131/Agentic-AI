@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 430" width="1100" height="430" role="img" aria-label="Cascading router: fast tier, validator, frontier fallback" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<title>Cascading router: fast tier, validator, frontier fallback</title>
+<defs><filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="3.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<linearGradient id="bar" x1="0" x2="1"><stop offset="0" stop-color="#58a6ff"/><stop offset="0.5" stop-color="#bc8cff"/><stop offset="1" stop-color="#f778ba"/></linearGradient>
+<marker id="a3fb950" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#3fb950"/></marker>
+<marker id="af0883e" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f0883e"/></marker>
+</defs>
+<rect width="1100" height="430" rx="16" fill="#0d1117"/>
+<rect x="0" y="0" width="1100" height="4" rx="2" fill="url(#bar)"><animate attributeName="opacity" values="0.5;1;0.5" dur="4s" repeatCount="indefinite"/></rect>
+<text x="30" y="42" font-size="20" font-weight="700" fill="#e6edf3">Speculative Cascading Router</text>
+<text x="30" y="66" font-size="12.5" fill="#8b949e">~80% of traffic resolves on the fast tier; failures escalate transparently</text>
+<line x1="228.0" y1="150.0" x2="302.0" y2="150.0" stroke="#3fb950" stroke-width="2" stroke-dasharray="8 8" marker-end="url(#a3fb950)" opacity="0.85"><animate attributeName="stroke-dashoffset" values="16;0" dur="0.8s" repeatCount="indefinite"/></line>
+<line x1="498.0" y1="150.0" x2="592.0" y2="150.0" stroke="#3fb950" stroke-width="2" stroke-dasharray="8 8" marker-end="url(#a3fb950)" opacity="0.85"><animate attributeName="stroke-dashoffset" values="16;0" dur="0.8s" repeatCount="indefinite"/></line>
+<line x1="788.0" y1="150.0" x2="872.0" y2="150.0" stroke="#3fb950" stroke-width="2" stroke-dasharray="8 8" marker-end="url(#a3fb950)" opacity="0.85"><animate attributeName="stroke-dashoffset" values="16;0" dur="0.8s" repeatCount="indefinite"/></line>
+<text x="830.0" y="140.0" font-size="11" fill="#3fb950" text-anchor="middle" stroke="#0d1117" stroke-width="4" paint-order="stroke" font-weight="600">pass</text>
+<line x1="690.0" y1="189.0" x2="690.0" y2="291.0" stroke="#f0883e" stroke-width="2" stroke-dasharray="8 8" marker-end="url(#af0883e)" opacity="0.85"><animate attributeName="stroke-dashoffset" values="16;0" dur="0.8s" repeatCount="indefinite"/></line>
+<text x="768.0" y="240.0" font-size="11" fill="#f0883e" text-anchor="middle" stroke="#0d1117" stroke-width="4" paint-order="stroke" font-weight="600">fail / low confidence</text>
+<line x1="748.5" y1="292.4" x2="911.5" y2="187.6" stroke="#f0883e" stroke-width="2" stroke-dasharray="8 8" marker-end="url(#af0883e)" opacity="0.85"><animate attributeName="stroke-dashoffset" values="16;0" dur="0.8s" repeatCount="indefinite"/></line>
+<circle r="6" fill="#3fb950" filter="url(#glow)"><animateMotion dur="5.42s" repeatCount="indefinite" calcMode="linear" keyPoints="0;1;1" keyTimes="0;0.8155;1" path="M130.0,150.0 L400.0,150.0 L690.0,150.0 L970.0,150.0"/></circle>
+<circle r="6" fill="#f0883e" filter="url(#glow)"><animateMotion dur="6.65s" repeatCount="indefinite" calcMode="linear" keyPoints="0;1;1" keyTimes="0;0.8495;1" path="M130.0,150.0 L400.0,150.0 L690.0,150.0 L690.0,330.0 L970.0,150.0"/></circle>
+<rect x="35.0" y="114.0" width="190" height="72" rx="12" fill="#161b22" stroke="#58a6ff" stroke-width="1.5"/>
+<text x="130" y="147" font-size="14" font-weight="700" fill="#e6edf3" text-anchor="middle">Request</text>
+<text x="130" y="166" font-size="11.5" fill="#8b949e" text-anchor="middle">routine or complex task</text>
+<rect x="305.0" y="114.0" width="190" height="72" rx="12" fill="#161b22" stroke="#3fb950" stroke-width="1.5"/>
+<text x="400" y="147" font-size="14" font-weight="700" fill="#e6edf3" text-anchor="middle">Fast Tier</text>
+<text x="400" y="166" font-size="11.5" fill="#8b949e" text-anchor="middle">Llama-3.1-8B on Groq</text>
+<rect x="595.0" y="114.0" width="190" height="72" rx="12" fill="#161b22" stroke="#bc8cff" stroke-width="1.5"/>
+<text x="690" y="147" font-size="14" font-weight="700" fill="#e6edf3" text-anchor="middle">Validation Barrier</text>
+<text x="690" y="166" font-size="11.5" fill="#8b949e" text-anchor="middle">JSON schema · τ ≥ 0.85</text>
+<rect x="875.0" y="114.0" width="190" height="72" rx="12" fill="#161b22" stroke="#39c5cf" stroke-width="1.5"/>
+<text x="970" y="147" font-size="14" font-weight="700" fill="#e6edf3" text-anchor="middle">Response</text>
+<text x="970" y="166" font-size="11.5" fill="#8b949e" text-anchor="middle">returned to client</text>
+<rect x="595.0" y="294.0" width="190" height="72" rx="12" fill="#161b22" stroke="#f0883e" stroke-width="1.5"/>
+<text x="690" y="327" font-size="14" font-weight="700" fill="#e6edf3" text-anchor="middle">Frontier Model</text>
+<text x="690" y="346" font-size="11.5" fill="#8b949e" text-anchor="middle">GPT-4o / Claude escalation</text>
+<rect x="35.0" y="114.0" width="190" height="72" rx="12" fill="#58a6ff" fill-opacity="0.22" stroke="#58a6ff" stroke-width="3" opacity="0"><animate attributeName="opacity" dur="5.42s" repeatCount="indefinite" keyTimes="0.0000;0.1660;1.0000" values="1.000;0.000;0.000"/></rect>
+<rect x="305.0" y="114.0" width="190" height="72" rx="12" fill="#3fb950" fill-opacity="0.22" stroke="#3fb950" stroke-width="3" opacity="0"><animate attributeName="opacity" dur="5.42s" repeatCount="indefinite" keyTimes="0.0000;0.2345;0.2621;0.4282;1.0000" values="0.000;0.001;0.999;0.000;0.000"/></rect>
+<rect x="595.0" y="114.0" width="190" height="72" rx="12" fill="#bc8cff" fill-opacity="0.22" stroke="#bc8cff" stroke-width="3" opacity="0"><animate attributeName="opacity" dur="5.42s" repeatCount="indefinite" keyTimes="0.0000;0.5160;0.5437;0.7097;1.0000" values="0.000;0.000;1.000;0.000;0.000"/></rect>
+<rect x="875.0" y="114.0" width="190" height="72" rx="12" fill="#39c5cf" fill-opacity="0.22" stroke="#39c5cf" stroke-width="3" opacity="0"><animate attributeName="opacity" dur="5.42s" repeatCount="indefinite" keyTimes="0.0000;0.7879;0.8155;0.9816;1.0000" values="0.000;0.001;0.999;0.000;0.000"/></rect>
+<rect x="35.0" y="114.0" width="190" height="72" rx="12" fill="#58a6ff" fill-opacity="0.22" stroke="#58a6ff" stroke-width="3" opacity="0"><animate attributeName="opacity" dur="6.65s" repeatCount="indefinite" keyTimes="0.0000;0.1354;1.0000" values="1.000;0.000;0.000"/></rect>
+<rect x="305.0" y="114.0" width="190" height="72" rx="12" fill="#3fb950" fill-opacity="0.22" stroke="#3fb950" stroke-width="3" opacity="0"><animate attributeName="opacity" dur="6.65s" repeatCount="indefinite" keyTimes="0.0000;0.1912;0.2138;0.3492;1.0000" values="0.000;0.000;1.000;0.000;0.000"/></rect>
+<rect x="595.0" y="114.0" width="190" height="72" rx="12" fill="#bc8cff" fill-opacity="0.22" stroke="#bc8cff" stroke-width="3" opacity="0"><animate attributeName="opacity" dur="6.65s" repeatCount="indefinite" keyTimes="0.0000;0.4209;0.4434;0.5788;1.0000" values="0.000;0.001;0.998;0.000;0.000"/></rect>
+<rect x="595.0" y="294.0" width="190" height="72" rx="12" fill="#f0883e" fill-opacity="0.22" stroke="#f0883e" stroke-width="3" opacity="0"><animate attributeName="opacity" dur="6.65s" repeatCount="indefinite" keyTimes="0.0000;0.5634;0.5860;0.7214;1.0000" values="0.000;0.000;1.000;0.000;0.000"/></rect>
+<rect x="875.0" y="114.0" width="190" height="72" rx="12" fill="#39c5cf" fill-opacity="0.22" stroke="#39c5cf" stroke-width="3" opacity="0"><animate attributeName="opacity" dur="6.65s" repeatCount="indefinite" keyTimes="0.0000;0.8270;0.8495;0.9850;1.0000" values="0.000;0.001;0.998;0.000;0.000"/></rect>
+</svg>
