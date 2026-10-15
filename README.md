@@ -15,12 +15,17 @@
 
 <br/>
 
-<a href="./Enterprise-19-Patterns-Visual.html">
+<div align="center">
+
+<a href="https://gaurav7131.github.io/Agentic-AI/Enterprise-19-Patterns-Visual.html" target="_blank">
   <img src="https://img.shields.io/badge/▶_OPEN_LIVE_INTERACTIVE_LAB-19_Patterns_Visual-facc15?style=for-the-badge&logoColor=black&labelColor=08080c" alt="Open Interactive Lab"/>
 </a>
-<a href="./Enterprise-19-Patterns-Visual.html">
+
+<a href="https://gaurav7131.github.io/Agentic-AI/Enterprise-19-Patterns-Visual.html#pattern-16-saga" target="_blank">
   <img src="https://img.shields.io/badge/▶_RUN_SAGA_SIMULATION-Terminal_%26_Rollback-22c55e?style=for-the-badge&logoColor=white&labelColor=08080c" alt="Run Saga Demo"/>
 </a>
+
+</div>
 
 <p align="center">
   <sub>19 interactive, animated pattern simulations — zero installation needed. Click <b>RUN SAGA DEMO</b> to inspect real-time LIFO compensation.</sub>
@@ -69,12 +74,20 @@
 
 ## 🏗 System Architecture Overview
 
+<div align="center">
+<a href="https://gaurav7131.github.io/Agentic-AI/Enterprise-Flow-Clean-Animated.html" target="_blank">
+  <img src="https://img.shields.io/badge/▶_ENTERPRISE_FLOW_CLEAN-Anime_Architecture-22c55e?style=for-the-badge&logoColor=white&labelColor=08080c" alt="Enterprise Flow Clean Animated"/>
+</a>
+<br/>
+<sub>Click → Opens animated architecture in Chrome • 4 Tiers • LIFO Saga • $2800 saved</sub>
+</div>
+
+```mermaid
 flowchart LR
 subgraph INGRESS["1. Ingress & Edge Protection"]
 U["REST / SSE / MCP Host"] --> R["Dynamic Router & Semantic Cache"]
 R -->|"Cache Hit (<20ms)"| CACHE[("Memory Store")]
 end
-
 subgraph ORCHESTRATION["2. Enterprise Orchestration"]
 R -->|"Cache Miss"| S["Master Supervisor Orchestrator"]
 S --> A1["Subagent: IT Triage"]
@@ -85,12 +98,10 @@ RAG --> VS[("Vector Store / ANN")]
 S --> M[("Tiered Memory Store")]
 T --> H{"HITL Gate ($ > 500)"}
 end
-
 subgraph INFERENCE["3. Asymmetric Compute"]
 S --> F["Fast Tier: Llama 3.1 8B (Groq LPU)"]
 F -. "Escalate (tau < 0.85)" .-> P["Frontier Tier: GPT-4o / Claude 3.5"]
 end
-
 subgraph TARGETS["4. Verified Execution"]
 H -->|"Approved / Compensated"| BE[("Enterprise Infrastructure")]
 end
