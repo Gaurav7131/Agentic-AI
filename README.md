@@ -15,12 +15,17 @@
 
 <br/>
 
-<a href="./Enterprise-19-Patterns-Visual.html">
+<div align="center">
+
+<a href="https://gaurav7131.github.io/Agentic-AI/Enterprise-19-Patterns-Visual.html" target="_blank">
   <img src="https://img.shields.io/badge/▶_OPEN_LIVE_INTERACTIVE_LAB-19_Patterns_Visual-facc15?style=for-the-badge&logoColor=black&labelColor=08080c" alt="Open Interactive Lab"/>
 </a>
-<a href="./Enterprise-19-Patterns-Visual.html">
+
+<a href="https://gaurav7131.github.io/Agentic-AI/Enterprise-19-Patterns-Visual.html#pattern-16-saga" target="_blank">
   <img src="https://img.shields.io/badge/▶_RUN_SAGA_SIMULATION-Terminal_%26_Rollback-22c55e?style=for-the-badge&logoColor=white&labelColor=08080c" alt="Run Saga Demo"/>
 </a>
+
+</div>
 
 <p align="center">
   <sub>19 interactive, animated pattern simulations — zero installation needed. Click <b>RUN SAGA DEMO</b> to inspect real-time LIFO compensation.</sub>
