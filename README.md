@@ -82,29 +82,7 @@
 <sub>Click → Opens animated architecture in Chrome • 4 Tiers • LIFO Saga • $2800 saved</sub>
 </div>
 
-```mermaid
-flowchart LR
-subgraph INGRESS["1. Ingress & Edge Protection"]
-U["REST / SSE / MCP Host"] --> R["Dynamic Router & Semantic Cache"]
-R -->|"Cache Hit (<20ms)"| CACHE[("Memory Store")]
-end
-subgraph ORCHESTRATION["2. Enterprise Orchestration"]
-R -->|"Cache Miss"| S["Master Supervisor Orchestrator"]
-S --> A1["Subagent: IT Triage"]
-S --> A2["Subagent: Accounts & Billing"]
-A1 & A2 --> T["@Tool Services"]
-S --> RAG["Corrective RAG Advisor"]
-RAG --> VS[("Vector Store / ANN")]
-S --> M[("Tiered Memory Store")]
-T --> H{"HITL Gate ($ > 500)"}
-end
-subgraph INFERENCE["3. Asymmetric Compute"]
-S --> F["Fast Tier: Llama 3.1 8B (Groq LPU)"]
-F -. "Escalate (tau < 0.85)" .-> P["Frontier Tier: GPT-4o / Claude 3.5"]
-end
-subgraph TARGETS["4. Verified Execution"]
-H -->|"Approved / Compensated"| BE[("Enterprise Infrastructure")]
-end
+
 
 ---
 
