@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Enterprise Flow - Clean Animated | Gaurav Agentic AI</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#08080c;color:#fff;font-family:'JetBrains Mono',ui-monospace,monospace;overflow-x:hidden}
+  .bg{position:fixed;inset:0;background:radial-gradient(800px circle at 20% 10%,rgba(59,130,246,0.12),transparent 60%),radial-gradient(600px circle at 80% 90%,rgba(139,92,246,0.12),transparent 60%),radial-gradient(500px circle at 50% 50%,rgba(250,204,21,0.06),transparent 70%)}
+  .grid{position:fixed;inset:0;background-image:linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);background-size:32px 32px;opacity:0.4}
+  .wrap{position:relative;max-width:1400px;margin:0 auto;padding:32px 20px}
+  h1{font-family:ui-sans-serif,system-ui;font-weight:800;letter-spacing:-0.03em;font-size:26px}
+  .sub{color:rgba(255,255,255,0.4);font-size:12px;margin-top:6px}
+  .board{margin-top:28px;border:1px solid rgba(255,255,255,0.08);border-radius:20px;background:rgba(14,14,20,0.7);backdrop-filter:blur(20px);overflow:hidden}
+  .tiers{display:grid;grid-template-columns:1fr 1.6fr 0.9fr 0.9fr;gap:0;min-height:620px}
+  .tier{border-right:1px solid rgba(255,255,255,0.06);padding:16px;position:relative}
+  .tier:last-child{border-right:none}
+  .tier-title{font-size:11px;letter-spacing:0.12em;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+  .dot{width:8px;height:8px;border-radius:999px;animation:pulse 2s infinite}
+  .node{border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);border-radius:12px;padding:10px 12px;font-size:11px;line-height:1.4;margin-bottom:12px;position:relative;transition:all 0.3s}
+  .node:hover{transform:translateY(-2px) scale(1.02);border-color:rgba(255,255,255,0.2);box-shadow:0 10px 30px rgba(0,0,0,0.4)}
+  .node.ingress{border-color:rgba(56,189,248,0.25);background:linear-gradient(180deg,rgba(14,165,233,0.12),rgba(255,255,255,0.02))}
+  .node.orch{border-color:rgba(167,139,250,0.25);background:linear-gradient(180deg,rgba(139,92,246,0.12),rgba(255,255,255,0.02))}
+  .node.infer{border-color:rgba(250,204,21,0.25);background:linear-gradient(180deg,rgba(250,204,21,0.12),rgba(255,255,255,0.02));color:#fde68a}
+  .node.target{border-color:rgba(34,197,94,0.25);background:linear-gradient(180deg,rgba(34,197,94,0.12),rgba(255,255,255,0.02))}
+  .node.cache{border-style:dashed;border-color:rgba(96,165,250,0.3);background:rgba(16,24,39,0.6)}
+  .node.hitl{border-color:rgba(248,113,113,0.4);background:linear-gradient(180deg,rgba(239,68,68,0.15),rgba(255,255,255,0.02));animation:hitlPulse 2s infinite}
+  .pill{display:inline-block;font-size:9px;padding:2px 8px;border-radius:999px;border:1px solid rgba(255,255,255,0.15);background:rgba(0,0,0,0.3);margin-top:6px}
+  .pill.green{border-color:rgba(34,197,94,0.4);color:#86efac;background:rgba(34,197,94,0.15)}
+  .pill.blue{border-color:rgba(56,189,248,0.4);color:#7dd3fc;background:rgba(14,165,233,0.15)}
+  .pill.yellow{border-color:rgba(250,204,21,0.4);color:#fde68a;background:rgba(250,204,21,0.15)}
+  .edge{position:absolute;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent);overflow:hidden}
+  .flow{position:absolute;top:0;width:60px;height:2px;background:linear-gradient(90deg,transparent,#22c55e,transparent);animation:flowMove 2.5s linear infinite}
+  .metrics{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap}
+  .m{border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.03);border-radius:999px;padding:6px 12px;font-size:11px;color:rgba(255,255,255,0.6)}
+  .m b{color:#fff}
+  @keyframes flowMove{0%{left:-60px}100%{left:100%}}
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.2)}}
+  @keyframes hitlPulse{0%,100%{box-shadow:0 0 0 0 rgba(239,68,68,0.3)}50%{box-shadow:0 0 0 8px rgba(239,68,68,0)}}
+  @media(max-width:900px){.tiers{grid-template-columns:1fr} .tier{border-right:none;border-bottom:1px solid rgba(255,255,255,0.06)}}
+</style>
+</head>
+<body>
+<div class="bg"></div><div class="grid"></div>
+<div class="wrap">
+  <div style="display:flex;justify-content:space-between;align-items:start;flex-wrap:wrap;gap:12px">
+    <div>
+      <h1>Enterprise Agentic AI — Control Plane</h1>
+      <div class="sub">Java 21 • Spring Boot 3.3.4 • Spring AI • Groq LPU • 19 Patterns • Saga LIFO = 100% clean rollback</div>
+    </div>
+    <div class="m"><b>80%</b> <200ms • <b>P95 18ms</b> cache hit • <b>0</b> orphaned • <b>$2800</b> saved</div>
+  </div>
+
+  <div class="board">
+    <div class="tiers">
+      <div class="tier">
+        <div class="tier-title"><span class="dot" style="background:#38bdf8"></span>1. Ingress & Edge Protection</div>
+        <div class="node ingress">🌐 REST / SSE / MCP Host<br><span style="opacity:0.5">Edge Gateway</span>
+          <div class="pill blue">Spring MVC + SSE</div>
+        </div>
+        <div style="position:relative;height:24px"><div class="edge"><div class="flow"></div></div></div>
+        <div class="node ingress">⚡ Dynamic Router<br>Semantic Cache<br><span style="opacity:0.5">P95 18ms hit</span>
+          <div class="pill green">Cache Hit (&lt;20ms)</div>
+        </div>
+        <div class="node cache">🗄️ Memory Store<br>Redis + Vector<br>12k RPS</div>
+      </div>
+
+      <div class="tier">
+        <div class="tier-title"><span class="dot" style="background:#a78bfa"></span>2. Enterprise Orchestration</div>
+        <div class="node orch">👑 Master Supervisor Orchestrator<br><span style="opacity:0.5">Saga • Zero orphan</span>
+          <div class="pill blue">Cache Miss → Supervisor</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+          <div class="node orch">🛠️ IT Triage<br><span style="opacity:0.5">65% deflection</span></div>
+          <div class="node orch">💳 Accounts & Billing</div>
+        </div>
+        <div class="node orch">@Tool Services — 19 Patterns<br><span style="opacity:0.5">ResilientAgentService</span></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+          <div class="node orch">🔍 Corrective RAG<br><span style="opacity:0.5">&lt;2% hallucination</span></div>
+          <div class="node cache">Vector Store / ANN<br>1.2M docs • HNSW</div>
+        </div>
+        <div class="node cache">Tiered Memory Store<br>Working K=3 + Episodic</div>
+        <div class="node hitl">⏸️ HITL Gate ($ > 500)<br><span style="opacity:0.7">Human approval → Redis checkpoint</span>
+          <div class="pill" style="border-color:rgba(248,113,113,0.4);color:#fca5a5;background:rgba(239,68,68,0.15)">Threshold gate</div>
+        </div>
+      </div>
+
+      <div class="tier">
+        <div class="tier-title"><span class="dot" style="background:#facc15"></span>3. Asymmetric Compute</div>
+        <div class="node infer">⚡ Fast Tier<br>Llama 3.1 8B (Groq LPU)<br>280 tok/s • <200ms
+          <div class="pill yellow">80% exits here</div>
+        </div>
+        <div style="position:relative;height:20px;border-left:2px dashed rgba(250,204,21,0.3);margin-left:20px">
+          <div style="position:absolute;top:-6px;left:8px" class="pill yellow">Escalate τ &lt; 0.85</div>
+        </div>
+        <div class="node infer">🧠 Frontier Tier<br>GPT-4o / Claude 3.5<br><span style="opacity:0.7">18% &lt;1.2s</span></div>
+      </div>
+
+      <div class="tier">
+        <div class="tier-title"><span class="dot" style="background:#22c55e"></span>4. Verified Execution</div>
+        <div class="node target">🏢 Enterprise Infrastructure<br>K8s • Postgres • Audit<br>100% rollback
+          <div class="pill green">Approved / Compensated • LIFO</div>
+        </div>
+        <div style="margin-top:16px;padding:12px;border-radius:12px;background:linear-gradient(180deg,rgba(250,204,21,0.1),rgba(0,0,0,0));border:1px solid rgba(250,204,21,0.2)">
+          <div style="font-size:10px;letter-spacing:0.1em;color:#fde68a;font-weight:700">SAGA HERO FLOW</div>
+          <div style="font-size:11px;margin-top:6px;color:rgba(255,255,255,0.7);line-height:1.5">
+            Plan → Stack push → Fail at step 3 (Storage)<br>
+            → LIFO pop: Subnet → VirtualNetwork<br>
+            → <span style="color:#86efac">0 orphaned • $2800 saved • Audit 100% clean</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="metrics">
+    <div class="m"><b style="color:#7dd3fc">80%</b> requests <200ms (Fast Tier)</div>
+    <div class="m"><b style="color:#86efac">18ms</b> P95 cache hit (HNSW >0.92)</div>
+    <div class="m"><b style="color:#fde68a">$2800/day</b> saved (HITL + τ)</div>
+    <div class="m"><b style="color:#86efac">0</b> orphaned (Saga LIFO)</div>
+    <div class="m"><b>19</b> tools • MCP • idempotent</div>
+  </div>
+</div>
+</body>
+</html>
