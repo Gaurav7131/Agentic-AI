@@ -4,7 +4,7 @@ import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.tool.annotation.Tool;
 import org.springframework.stereotype.Service;
 
-//SubAgent B:AccountSubAgent
+//SubAgent B:AccountSubAgent for tool invocation prevent tool poisoning
 @Service
 public class AccountSubagent {
     private final ChatClient chatClient;
