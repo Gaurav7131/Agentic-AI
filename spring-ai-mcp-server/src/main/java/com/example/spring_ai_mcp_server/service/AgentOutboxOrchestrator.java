@@ -1,0 +1,86 @@
+package com.example.spring_ai_mcp_server.service;
+
+import com.example.spring_ai_mcp_server.model.AgentMeshModels.AgentActionIntent;
+import com.example.spring_ai_mcp_server.model.AgentMeshModels.AgentOutboxRecord;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.ai.chat.client.ChatClient;
+import org.springframework.stereotype.Service;
+
+import java.time.Instant;
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+
+@Service
+public class AgentOutboxOrchestrator {
+
+    private static final Logger log = LoggerFactory.getLogger(AgentOutboxOrchestrator.class);
+
+    private final ChatClient chatClient;
+    private final ObjectMapper objectMapper;
+    // In-memory Outbox store simulating a transactional RDBMS (e.g., PostgreSQL
+    // outbox_table)
+    private final Map<String, AgentOutboxRecord> outboxDatabase = new ConcurrentHashMap<>();
+
+    public AgentOutboxOrchestrator(ChatClient.Builder builder, ObjectMapper objectMapper) {
+        this.objectMapper = objectMapper;
+        this.chatClient = builder
+                .defaultSystem("""
+                            You are an autonomous Cloud Operations Planner.
+                            Parse the user requirements and convert them into a typed JSON Action Intent.
+                            Do not invent invalid action names. Allowed actions: SCALE_REPLICAS, MIGRATE_DATABASE.
+                            Always provide a client-derived idempotencyKey.
+                        """)
+                .build();
+    }
+
+    public AgentOutboxRecord planAndEmitAction(String correlationId, String userInstruction) {
+        log.info("Evaluating plan for correlationId: {}", correlationId);
+
+        // Stage 1: Generate typed structured intent via LLM
+        AgentActionIntent intent = chatClient.prompt()
+                .user("User instruction: " + userInstruction + " | Session: " + correlationId)
+                .call()
+                .entity(AgentActionIntent.class);
+
+        if (intent == null) {
+            throw new IllegalStateException("LLM failed to decompose intent.");
+        }
+
+        try {
+            String payload = objectMapper.writeValueAsString(intent);
+            String recordId = UUID.randomUUID().toString();
+
+            // Stage 2: Atomically persist to outbox table within standard transaction
+            // boundary
+            AgentOutboxRecord record = new AgentOutboxRecord(
+                    recordId,
+                    correlationId,
+                    intent.targetAction(),
+                    payload,
+                    "PENDING",
+                    Instant.now());
+
+            outboxDatabase.put(recordId, record);
+            log.info("Agent Action safely written to Transactional Outbox: id={}", recordId);
+            return record;
+
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException("Serialization failure", e);
+        }
+    }
+
+    public Map<String, AgentOutboxRecord> getOutboxEntries() {
+        return Collections.unmodifiableMap(outboxDatabase);
+    }
+
+    public void markDispatched(String recordId) {
+        AgentOutboxRecord rec = outboxDatabase.get(recordId);
+        if (rec != null) {
+            outboxDatabase.put(recordId, new AgentOutboxRecord(
+                    rec.id(), rec.correctionId(), rec.eventType(), rec.payload(), "DISPATCHED", rec.createdAt()));
+        }
+    }
+}
