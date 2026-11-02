@@ -18,7 +18,7 @@ public class AgentSandboxController {
         this.sandboxService = sandboxService;
     }
 
-    @PostMapping("/run")
+    @PostMapping("/execute")
     public ResponseEntity<SandBoxModels.ExecutionResult> execute(@RequestBody SandBoxModels.ExecutionRequest request) {
         SandBoxModels.ExecutionResult result = sandboxService.executeSecurely(request);
         return ResponseEntity.ok(result);
