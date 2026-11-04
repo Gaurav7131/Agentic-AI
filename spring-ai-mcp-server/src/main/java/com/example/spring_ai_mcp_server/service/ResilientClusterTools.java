@@ -1,18 +1,19 @@
 package com.example.spring_ai_mcp_server.service;
 
+import java.util.Optional;
+
 import org.springframework.ai.tool.annotation.Tool;
 import org.springframework.ai.tool.annotation.ToolParam;
 import org.springframework.stereotype.Service;
 
-import com.example.spring_ai_mcp_server.security.DistributedLeasedManager;
-
 @Service
 public class ResilientClusterTools {
 
-    private final DistributedLeasedManager manager;
+    private final DistributedLeasedManagerService manager;
+    private String resourceId;
 
     // constructor
-    public ResilientClusterTools(DistributedLeasedManager manager) {
+    public ResilientClusterTools(DistributedLeasedManagerService manager) {
         this.manager = manager;
     }
 
@@ -22,9 +23,9 @@ public class ResilientClusterTools {
             @ToolParam(description = "Cluster partioin Region") String region) {
 
         String resourceKey = "LOCK:POD" + podName;
-        boolean locked = manager.acquireMutationLock(resourceKey, 30);
+        Optional<Long> locked = manager.acquireMutationLock(resourceId, resourceKey, 30);
 
-        if (!locked) {
+        if (locked != null) {
             return "MUTATION_REJECTED" + podName + "is leased by another workflow";
         }
 
