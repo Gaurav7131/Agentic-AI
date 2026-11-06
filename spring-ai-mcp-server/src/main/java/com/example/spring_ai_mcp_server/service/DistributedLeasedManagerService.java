@@ -18,12 +18,6 @@ public class DistributedLeasedManagerService {
     private final Map<String, LeaseRecord> leaseRegistry = new ConcurrentHashMap<>();
     private final AtomicLong tokenGen = new AtomicLong(0);
 
-    /*
-     * 1)Prev.Acquire Lock
-     * Update: Atomically acquires or extends a lease, issuing an incrementing
-     * monotonic fencing token.
-     * 
-     */
     public synchronized Optional<Long> acquireMutationLock(String resourceId, String agentId, long ttlSec) {
         Instant now = Instant.now();
         LeaseRecord currentLease = leaseRegistry.get(resourceId);
@@ -36,12 +30,6 @@ public class DistributedLeasedManagerService {
         // Monotonically token increment
         long nextFencingToken = tokenGen.incrementAndGet();
         leaseRegistry.put(resourceId, new LeaseRecord(agentId, nextFencingToken, now));
-
-        /*
-         * put fresh entry inside lock store
-         * lockRegistry.put(resourceKey, now.plusSeconds(ttlSec));
-         * return true;
-         */
 
         return Optional.of(nextFencingToken);
     }
