@@ -10,7 +10,7 @@ import com.example.spring_ai_mcp_server.model.SandBoxModels;
 import com.example.spring_ai_mcp_server.service.AgentSandboxService;
 
 @RestController
-@RequestMapping("/api/agent/sandbox")
+@RequestMapping("/api/sandbox")
 public class AgentSandboxController {
     private final AgentSandboxService sandboxService;
 
