@@ -1,0 +1,18 @@
+class ResearcherAgent {
+        String research(String topic) {
+                    return "Research found: Paytm gives upto Rs.50 cashback on Jio 349 with code JIOPAYTM";
+        }
+}
+class WriterAgent {
+        String write(String research) {
+                    return "Final Report: " + research + " -> So use Paytm.";
+        }
+}
+public class MultiAgent {
+        public static void main(String[] args) {
+                    String data = new ResearcherAgent().research("Jio 349");
+                            System.out.println(new WriterAgent().write(data));
+        }
+}
+        }
+}
