@@ -14,5 +14,3 @@ public class MultiAgent {
                             System.out.println(new WriterAgent().write(data));
         }
 }
-        }
-}
